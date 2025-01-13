@@ -1,6 +1,8 @@
 <?php 
-    $con_ck=mysqli_connect("localhost","root","1t@dm1N","db_hris");
-    $con_cenpri=mysqli_connect("localhost","root","1t@dm1N","db_cenpri");
+    // $con_ck=mysqli_connect("localhost","root","1t@dm1N","db_hris");
+    // $con_cenpri=mysqli_connect("localhost","root","1t@dm1N","db_cenpri");
+    $con_ck=mysqli_connect("localhost","root","","db_hris");
+    $con_cenpri=mysqli_connect("localhost","root","","db_cenpri");
     session_start();
     if(empty($_SESSION)){
         echo "<script>alert('You are currently not logged in.'); window.location = 'index.php';</script>";

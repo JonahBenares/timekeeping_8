@@ -6,7 +6,22 @@
     ini_set('max_execution_time', 5000);
     ini_set('memory_limit','2000M');
     include 'includes/connection.php';
-    require_once('includes/phpexcel/Classes/PHPExcel/IOFactory.php');
+    // require_once('includes/phpexcel/Classes/PHPExcel/IOFactory.php');
+    require_once('vendor\autoload.php');
+    use PhpOffice\PhpSpreadsheet\Spreadsheet;
+    use PhpOffice\PhpSpreadsheet\Writer\Xlsx as writerxlsx;
+    use PhpOffice\PhpSpreadsheet\Reader\Csv;
+    use PhpOffice\PhpSpreadsheet\Reader\Xlsx as readerxlsx;
+    use PhpOffice\PhpSpreadsheet\Worksheet\Drawing as drawing; // Instead PHPExcel_Worksheet_Drawing
+    use PhpOffice\PhpSpreadsheet\Style\Alignment as alignment; // Instead alignment
+    use PhpOffice\PhpSpreadsheet\Style\Border as border;
+    use PhpOffice\PhpSpreadsheet\Style\NumberFormat as number_format;
+    use PhpOffice\PhpSpreadsheet\Style\Fill as fill; // Instead fill
+    use PhpOffice\PhpSpreadsheet\Style\Color as color; //Instead PHPExcel_Style_Color
+    use PhpOffice\PhpSpreadsheet\Worksheet\PageSetup as pagesetup; // Instead PHPExcel_Worksheet_PageSetup
+    use PhpOffice\PhpSpreadsheet\IOFactory as io_factory; // Instead PHPExcel_IOFactory
+
+
     $dest= realpath('uploads/excel/');
     $error_ext=0;
     if(!empty($_FILES['csv']['name'])){
@@ -19,11 +34,12 @@
         else {
             $filename1='Time Record Administrator.'.$ext1;
             if(move_uploaded_file($_FILES["csv"]['tmp_name'], $dest.'/'.$filename1)){
-                $objPHPExcel = new PHPExcel();
+                // $objPHPExcel = new PHPExcel();
+                $objPHPExcel = new Spreadsheet();
                 $inputFileName =realpath('uploads/excel/Time Record Administrator.xlsx');
                 try {
-                    $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
-                    $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+                    $inputFileType = io_factory::identify($inputFileName);
+                    $objReader = io_factory::createReader($inputFileType);
                     $objPHPExcel = $objReader->load($inputFileName);
                 } 
                 catch(Exception $e) {

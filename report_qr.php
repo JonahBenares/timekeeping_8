@@ -103,9 +103,9 @@ function get_resolution($con_tk,$personal_id, $rec_date){
                     <div class="content">                          
                         <div class="module">
                             <div class="module-body" >
-                                <div class="pull-right" style="margin-right: 15px">
+                                <!-- <div class="pull-right" style="margin-right: 15px">
                                     <a href="local_to_online.php" class="btn btn-success btn-sm ">Import Time</a>
-                                </div>
+                                </div> -->
                                 <div style="overflow-x: auto;width: 100%;display: block;">
                                 <table  class="table table-bordered" width="200%" id="example" >
                                     <thead>

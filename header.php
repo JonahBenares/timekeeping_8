@@ -163,7 +163,7 @@
                         <ul class="nav pull-right">
                             <li><a href="home.php">DASHBOARD </a></li>        
                             <?php if($_SESSION['usertype']=='admin') { ?>                    
-                            <li><a href="uploadfile.php">UPLOAD FILE</a></li>
+                            <!-- <li><a href="uploadfile.php">UPLOAD FILE</a></li> -->
                             <?php } ?>
                             <!-- <li><a href="qr_code_reader.php">QR SCANNER</a></li> -->
                             <!-- <li><a href="report.php">REPORT OLD</a></li> -->

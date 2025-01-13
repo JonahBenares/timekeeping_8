@@ -167,7 +167,7 @@
                             <?php } ?>
                             <!-- <li><a href="qr_code_reader.php">QR SCANNER</a></li> -->
                             <!-- <li><a href="report.php">REPORT OLD</a></li> -->
-                            <li><a href="report_qr.php">REPORT NEW</a></li>
+                            <li><a href="report_qr.php">REPORT</a></li>
                             <li><a href="incomplete_logs.php">INCOMPLETE LOGS</a></li>
                             <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <?php echo $_SESSION['fullname'];?>

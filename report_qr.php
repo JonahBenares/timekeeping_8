@@ -27,7 +27,7 @@ function get_resolution($con_tk,$personal_id, $rec_date){
     $count_remarks = mysqli_num_rows($get_remarks);
 
     $fetch_remarks = mysqli_fetch_array($get_remarks);
-    return $fetch_remarks['remarks'];
+    return $fetch_remarks['remarks'] ?? '';
 }
 
 ?>
